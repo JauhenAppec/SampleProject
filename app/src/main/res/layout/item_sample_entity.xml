@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.example.sampleapplication.R" />
+
+        <import type="androidx.core.content.ContextCompat" />
+
+        <variable
+            name="item"
+            type="com.example.sampleapplication.model.ui.SampleUiListEntity" />
+
+        <variable
+            name="handler"
+            type="com.example.sampleapplication.ui.home.SampleEntityClickListener" />    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_sample_entity"
+        android:layout_marginHorizontal="@dimen/m5"
+        android:layout_marginVertical="@dimen/m3"
+        android:onClick="@{() -> handler.onSampleEntityClick(item)}"
+        android:foreground="?selectableItemBackground"
+        app:clipToOutline="@{true}"
+        app:drawableTintColor="@{item.defaultBackgroundColor}"
+        app:drawableRadius="@{R.dimen.sample_item_corner_radius}">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@{ContextCompat.getColor(context, item.entityTextColorResId)}"
+            android:text="@{item.timeAddedString}"
+            tools:text="20 sep 2024"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

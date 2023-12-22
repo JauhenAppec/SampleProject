@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SampleApplication</string>
+
+    <string name="add_entity_button">Add Entity</string>
+    <string name="no_entity_with_id_in_db">No entity found</string>
+
+    <string name="exit_dialog_title">Are you sure you want to exit the application?</string>
+
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+</resources>

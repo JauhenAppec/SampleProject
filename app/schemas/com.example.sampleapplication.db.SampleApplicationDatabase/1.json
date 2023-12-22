@@ -1,0 +1,40 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "a632ff15be893714b5a480b24ec40303",
+    "entities": [
+      {
+        "tableName": "sample_entity",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`sample_entity_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `time_added` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "sampleEntityId",
+            "columnName": "sample_entity_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timeAdded",
+            "columnName": "time_added",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "sample_entity_id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a632ff15be893714b5a480b24ec40303')"
+    ]
+  }
+}

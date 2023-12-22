@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="is_tablet">false</bool>
+    <dimen name="item_sample_entity">40dp</dimen>
+    <dimen name="sample_item_corner_radius">16dp</dimen>
+</resources>

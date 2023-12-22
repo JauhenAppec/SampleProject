@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_settings"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.sampleapplication.ui.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_homeFragment_to_itemFragment"
+            app:destination="@id/itemFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_exitDialog"
+            app:destination="@id/exitDialog" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/itemFragment"
+        android:name="com.example.sampleapplication.ui.item.ItemFragment"
+        android:label="ItemFragment"
+        tools:layout="@layout/fragment_item">
+
+        <argument
+            android:name="sampleEntityIndex"
+            app:argType="long" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/exitDialog"
+        android:name="com.example.sampleapplication.ui.exit.ExitDialogFragment"
+        android:label="ExitDialog"
+        tools:layout="@layout/dialog_exit"/>
+</navigation>
